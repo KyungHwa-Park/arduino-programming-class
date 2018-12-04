@@ -5,7 +5,6 @@ int yellow = 12;
 int green = 8;
 
 void setup() {
-  Serial.begin(9600);
   pinMode(red,OUTPUT);
   pinMode(yellow,OUTPUT);
   pinMode(green,OUTPUT);
