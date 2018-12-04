@@ -1,24 +1,33 @@
+// 디지털 방식으로 신호등 만들기
+
+int red = 13;
+int yellow = 12;
+int green = 8;
+
 void setup() {
   Serial.begin(9600);
-  pinMode(13,OUTPUT);
-  pinMode(12,OUTPUT);
-  pinMode(8,OUTPUT);
+  pinMode(red,OUTPUT);
+  pinMode(yellow,OUTPUT);
+  pinMode(green,OUTPUT);
 }
 
 void loop() {
-  digitalWrite(13, HIGH);
-  digitalWrite(12, LOW);
+  // 빨강색 LED 점등
+  digitalWrite(red, HIGH);
+  digitalWrite(yellow, LOW);
+  digitalWrite(green, LOW);
+  delay(1000);
+
+  // 노랑색 LED 점등
+  digitalWrite(red, LOW);
+  digitalWrite(yellow, HIGH);
   digitalWrite(8, LOW);
   delay(1000);
-  
-  digitalWrite(13, LOW);
-  digitalWrite(12, HIGH);
-  digitalWrite(8, LOW);
-  delay(1000);
-  
-  digitalWrite(13, LOW);
-  digitalWrite(12, LOW);
-  digitalWrite(8, HIGH);
+
+  // 초록색 LED 점등
+  digitalWrite(red, LOW);
+  digitalWrite(yellow, LOW);
+  digitalWrite(green, HIGH);
   delay(1000);
 
 }
